@@ -2,15 +2,15 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 primes = []
 not_primes = []
 for i in numbers:
-    is_prime = True
+    is_primes = True
     if i < 2:
-        is_prime = False
+        is_primes = False
     else:
-        for y in range(2, 16):
-            if i % y == 0:
-                is_prime = False
-            break
-        if is_prime:
+        for j in range(2, i):
+            if i % j == 0 and j * j <= i:
+                is_primes = False
+                break
+        if is_primes:
             primes.append(i)
         else:
             not_primes.append(i)
